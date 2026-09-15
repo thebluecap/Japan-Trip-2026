@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🗺️ 上高地·名古屋·金澤·高山 縱走之旅</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800 pb-12">
+
+  <!-- Header -->
+  <header class="bg-emerald-700 text-white p-6 shadow-lg text-center">
+    <h1 class="text-2xl font-bold">🗺️ 中部北陸縱走之旅</h1>
+    <p class="text-emerald-100 text-sm mt-1">2026/10/05 – 2026/10/11</p>
+  </header>
+
+  <main class="max-w-md mx-auto p-4 space-y-6">
+
+    <!-- 財務統計卡片 -->
+    <section class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+      <h2 class="text-lg font-bold text-slate-900 border-b pb-2 mb-3">💰 預算與分攤結算</h2>
+      <div class="grid grid-cols-2 gap-3 text-sm mb-3">
+        <div class="bg-emerald-50 p-3 rounded-xl border border-emerald-100">
+          <p class="font-bold text-emerald-800">綺 (Person A)</p>
+          <p class="text-slate-600">機+酒：<span class="font-bold text-slate-900">NT$ 26,502</span></p>
+        </div>
+        <div class="bg-teal-50 p-3 rounded-xl border border-teal-100">
+          <p class="font-bold text-teal-800">萱 (Person B)</p>
+          <p class="text-slate-600">機+酒：<span class="font-bold text-slate-900">NT$ 27,146</span></p>
+        </div>
+      </div>
+      <p class="text-xs text-slate-500 bg-slate-50 p-2 rounded-lg">預付交通費：NT$ 1,475（每人 $738，萱 預付）</p>
+    </section>
+
+    <!-- 待辦事項 -->
+    <section class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+      <h2 class="text-lg font-bold text-slate-900 border-b pb-2 mb-3">📋 待辦事項 (To-Do)</h2>
+      <ul class="space-y-2 text-sm">
+        <li class="flex items-center gap-2"><input type="checkbox" class="w-4 h-4 text-emerald-600"> 機場交通查詢</li>
+        <li class="flex items-center gap-2"><input type="checkbox" class="w-4 h-4 text-emerald-600"> 高山-白川鄉-金澤 交通劃位</li>
+        <li class="flex items-center gap-2"><input type="checkbox" class="w-4 h-4 text-emerald-600"> 準備/購買 熊鈴</li>
+        <li class="flex items-center gap-2 text-slate-400 line-through"><input type="checkbox" checked class="w-4 h-4 text-emerald-600"> 9/6 預約名古屋到高山巴士</li>
+        <li class="flex items-center gap-2 text-slate-400 line-through"><input type="checkbox" checked class="w-4 h-4 text-emerald-600"> 取消星野 / 富山住宿</li>
+      </ul>
+    </section>
+
+    <!-- 行程時間軸 -->
+    <section id="itinerary-list" class="space-y-4">
+      <!-- 每日行程卡片會由 JavaScript 自動繪製於此 -->
+    </section>
+
+  </main>
+
+  <script>
+    const itinerary = [
+      { day: "Day 0", date: "10/05 (一)", title: "前導日：夜間高鐵前往桃園", desc: "21:05 高鐵左營 ➡️ 22:43 桃園站 (690車次)" },
+      { day: "Day 1", date: "10/06 (二)", title: "降落名古屋 ➔ 高山", desc: "06:05 抵達中部機場 ➔ 搭乘名鐵急行至名古屋 ➔ 14:30 名鐵巴士中心搭車 ➔ 17:20 抵達高山 ➔ 晚餐：味藏天國 / 丸明 飛驒牛燒肉", hotel: "高山綠洲 K之家旅舍 (兩晚)" },
+      { day: "Day 2", date: "10/07 (三)", title: "高山朝市 ➔ 飛驒古川漫遊", desc: "07:00 宮川朝市 ➔ 高山老街/陣屋 ➔ 下午搭 JR 前往飛驒古川 ➔ 晚間整理大行李（黑貓寄往金澤）", hotel: "高山綠洲 K之家旅舍" },
+      { day: "Day 3", date: "10/08 (四)", title: "直奔神仙境地 ➔ 上高地", desc: "08:00 高山搭巴士 ➔ 平湯轉車 ➔ 09:30 抵達上高地放行李 ➔ 徒步巡禮（大正池/河童橋/明神池）", hotel: "上高地溫泉飯店 (一泊二食)" },
+      { day: "Day 4", date: "10/09 (五)", title: "上高地 ➔ 白川鄉合掌村 ➔ 金澤", desc: "06:00 晨霧攝影 ➔ 11:02 離開上高地 ➔ 13:40 抵達白川鄉 (停留3小時) ➔ 17:30 巴士前往金澤 ➔ 晚餐：金澤關東煮/煤氣蝦", hotel: "Hotel Vista Kanazawa (兩晚)" },
+      { day: "Day 5", date: "10/10 (六)", title: "金澤加賀百萬石文化漫遊", desc: "08:30 近江町市場奢華海鮮早餐 ➔ 兼六園 / 金澤城 / 東茶屋街 ➔ 香林坊購物與居酒屋", hotel: "Hotel Vista Kanazawa" },
+      { day: "Day 6", date: "10/11 (日)", title: "金澤 ➔ 小松機場 ✈️ 賦歸高雄", desc: "09:00 百番街採買伴手禮 ➔ 10:45 搭乘豪華巴士至小松機場 ➔ 13:05 飛往高雄 (15:25抵達)" }
+    ];
+
+    const container = document.getElementById('itinerary-list');
+    itinerary.forEach(item => {
+      container.innerHTML += `
+        <div class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200">
+          <div class="flex justify-between items-center mb-2">
+            <span class="bg-emerald-100 text-emerald-800 font-bold text-xs px-2.5 py-1 rounded-full">${item.day}</span>
+            <span class="text-xs text-slate-400">${item.date}</span>
+          </div>
+          <h3 class="font-bold text-slate-800 text-base mb-2">${item.title}</h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-3">${item.desc}</p>
+          ${item.hotel ? `<div class="text-xs bg-amber-50 text-amber-800 p-2 rounded-lg font-medium">🏨 住宿：${item.hotel}</div>` : ''}
+        </div>
+      `;
+    });
+  </script>
+</body>
+</html>
